@@ -18,5 +18,5 @@
 			"": "."
 		}
 	},
-	"target-dir": "../opauth/lib/Opauth/Strategy"
+	"target-dir": "../../opauth/lib/Opauth/Strategy"
 }
