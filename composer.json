@@ -17,6 +17,5 @@
 		"psr-0": {
 			"": "."
 		}
-	},
-	"target-dir": "../../opauth/lib/Opauth/Strategy"
+	}
 }
