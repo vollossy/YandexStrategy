@@ -1,0 +1,21 @@
+{
+	"name": "vollossy/yandex",
+	"description": "yandex strategy for Opauth",
+	"keywords": ["authentication","auth","yandex"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Roman Makarov",
+			"email": "vollossy@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.2.0",
+		"opauth/opauth": ">=0.2.0"
+	},
+	"autoload": {
+		"psr-0": {
+			"": "."
+		}
+	}
+}
