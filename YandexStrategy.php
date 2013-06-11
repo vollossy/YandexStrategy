@@ -4,7 +4,8 @@ class YandexStrategy extends OpauthStrategy{
     public $expects = array('app_id', 'app_secret');
 
     public $defaults = array(
-        'redirect_uri' => '{complete_url_to_strategy}oauth2callback'
+        'redirect_uri' => '{complete_url_to_strategy}oauth2callback',
+        'expires'      => 10000000
     );
 
     public function request()
@@ -36,11 +37,15 @@ class YandexStrategy extends OpauthStrategy{
                 'uid' => $userInfo['id'],
                 'info' => array(),
                 'credentials' => array(
-                    'token' => $result->access_token,
-                    'expires' => date('c', time() + 10000000)
+                    'token' => $result->access_token
                 ),
                 'raw' => $userInfo
             );
+            
+            if($this->strategy['expires'])
+            {
+                $this->auth['credentials']['expires'] = date('c', time() + $this->strategy['expires']);
+            }
 
             $this->mapProfile($userInfo, 'real_name', 'info.name');
             $this->mapProfile($userInfo, 'default_email', 'info.email');
